@@ -1,4 +1,5 @@
 asgiref==3.4.1
+Brotli==1.0.9
 Django==3.2.9
 django-quill-editor==0.1.22
 gunicorn==20.1.0
