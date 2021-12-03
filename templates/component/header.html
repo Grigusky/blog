@@ -1,0 +1,11 @@
+<nav>
+    <div class="nav-wrapper">
+        <a href="{% url "list_article" %}" class="brand-logo">Logo</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="{% url "list_article_category" "dev" %}">Dev</a></li>
+            <li><a href="{% url "list_article_category" "sys&res" %}">Sys et Res</a></li>
+            <li><a href="{% url "list_article_category" "cours&tuto" %}">Cours et tuto</a></li>
+            <li><a href="{% url "list_article_category" "detente" %}">Détente</a></li>
+        </ul>
+    </div>
+</nav>

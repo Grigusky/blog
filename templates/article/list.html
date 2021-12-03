@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}index{% endblock %}
+{% block style %}
+    <link rel="stylesheet" type="text/css" href="{% static 'index.css' %}">
+{% endblock %}
+{% block content %}
+    {% include "component/header.html" %}
+    <div class="container">
+        <h1 class="center">Liste des articles</h1>
+        <div class="row center">
+        </div>
+        <div class="row">
+            {% if articles %}
+                {% for a in articles %}
+                    <div class="col s12 m6">
+                        <div class="card">
+                            <div class="card-image">
+                                <img src="https://source.unsplash.com/random">
+                                <span class="card-title">{{ a.title }}</span>
+                            </div>
+                            <div class="card-content">
+                                <p>{{ a.title }}</p>
+                                {# a.content.html|safe #}
+                            </div>
+                            <div class="card-action">
+                                <a href="{% url "get_article" a.title %}">Lire</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <h3>Aucun article pour le moment</h3>
+            {% endif %}
+        </div>
+    </div>
+    {% include "component/footer.html" %}
+{% endblock %}
+{% block script %}{% endblock %}
