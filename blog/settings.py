@@ -29,7 +29,7 @@ if os.environ.get('ENV') == 'PRODUCTION':
 else:
     DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["https://grigusky.herokuapp.com/"]
 
 
 # Application definition
@@ -81,7 +81,7 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-if platform.system() == "Linux":
+if platform.system() == "Windows":
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
