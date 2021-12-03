@@ -80,9 +80,9 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
+# ec2-79-125-30-28.eu-west-1.compute.amazonaws.com
 
-
-if platform.system() == "Windows":
+if platform.system() == "Linux":
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
@@ -93,11 +93,7 @@ else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': os.getenv('BDD_NAME'),
-            'USER': os.getenv('BDD_USER'),
-            'PASSWORD': os.getenv('BDD_PASSWORD'),
-            'HOST': os.getenv('BDD_HOST'),
-            'PORT': '5432',
+            'HOST': os.getenv('DATABASE_URL'),
         }
     }
 
