@@ -82,7 +82,7 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 # ec2-79-125-30-28.eu-west-1.compute.amazonaws.com
 
-if platform.system() == "Linux":
+if platform.system() == "Windows":
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
