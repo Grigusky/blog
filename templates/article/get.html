@@ -11,6 +11,11 @@
     <div id="image-head" style="background-image: url('https://source.unsplash.com/random')"></div>
     <div class="container">
         <h1>{{ article.title }}</h1>
+        <p>
+            {% for c in article.category.all %}
+            <a href="{% url "list_article_category" c.title %}" class="btn-small">{{ c.title }}</a>
+            {% endfor %}
+        </p>
         <p>{{ article.content.html|safe }}</p>
     </div>
 
