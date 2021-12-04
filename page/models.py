@@ -35,7 +35,7 @@ class BlogPost(models.Model):
     date = models.DateField(auto_now=True)
     title = models.CharField(max_length=100)
     content = QuillField()
-    slug = AutoSlugField(null=True, default=None, unique=True, populate_from='name')
+    slug = AutoSlugField(null=True, default=None, unique=True, populate_from='title')
 
     def __str__(self):
         return self.title
