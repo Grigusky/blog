@@ -26,11 +26,7 @@ class BlogPost(models.Model):
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
     )
-    category = models.ForeignKey(
-        BlogCategory,
-        on_delete=models.CASCADE,
-        blank=True, null=True
-    )
+    category = models.ManyToManyField(BlogCategory)
     date = models.DateField(auto_now=True)
     title = models.CharField(max_length=100)
     content = QuillField()
