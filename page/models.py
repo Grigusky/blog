@@ -2,6 +2,7 @@ from django.db import models
 from django_quill.fields import QuillField
 from django.conf import settings
 from django.contrib.auth.models import User
+from django_extensions.db.fields import AutoSlugField
 
 
 class UserDescription(models.Model):
@@ -34,6 +35,7 @@ class BlogPost(models.Model):
     date = models.DateField(auto_now=True)
     title = models.CharField(max_length=100)
     content = QuillField()
+    slug = AutoSlugField(null=True, default=None, unique=True, populate_from='name')
 
     def __str__(self):
         return self.title
