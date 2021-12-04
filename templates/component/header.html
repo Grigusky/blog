@@ -1,11 +1,23 @@
+<ul id="dropdown1" class="dropdown-content">
+    <li><a href="{% url 'profile' %}">profile</a></li>
+    <li><a href="{% url 'logout' %}">Logout</a></li>
+</ul>
 <nav>
     <div class="nav-wrapper">
-        <a href="{% url "list_article" %}" class="brand-logo">Logo</a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <a href="#!" class="brand-logo">Logo</a>
+        <ul class="right hide-on-med-and-down">
             <li><a href="{% url "list_article_category" "dev" %}">Dev</a></li>
             <li><a href="{% url "list_article_category" "sys&res" %}">Sys et Res</a></li>
             <li><a href="{% url "list_article_category" "cours&tuto" %}">Cours et tuto</a></li>
             <li><a href="{% url "list_article_category" "detente" %}">Détente</a></li>
+            <!-- Dropdown Trigger -->
+            {% if user.is_authenticated %}
+                <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">admin<i
+                        class="material-icons right">arrow_drop_down</i></a></li>
+            {% else %}
+                <li><a href="{% url 'login' %}">login</a></li>
+            {% endif %}
+
         </ul>
     </div>
 </nav>
