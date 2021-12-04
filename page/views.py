@@ -14,7 +14,7 @@ def list_article(request, category=None):
 
 def get_article(request, slug=None):
     """ get an article with category"""
-    article = BlogPost.objects.get(title=slug)
+    article = BlogPost.objects.get(slug=slug)
     if request.POST:
         comment = request.POST.get("comment")
         user = request.user

@@ -6,13 +6,13 @@ from django_extensions.db.fields import AutoSlugField
 
 
 class UserDescription(models.Model):
+    """ Class to add description to user model"""
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     description = models.TextField()
 
 
 class BlogCategory(models.Model):
     """ model for categories """
-
     title = models.CharField(max_length=30)
     description = models.CharField(max_length=100)
 
@@ -22,7 +22,6 @@ class BlogCategory(models.Model):
 
 class BlogPost(models.Model):
     """ a model for a blog post """
-
     author = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
@@ -43,7 +42,6 @@ class BlogPost(models.Model):
 
 class Comment(models.Model):
     """ a model for a comment """
-
     author = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
